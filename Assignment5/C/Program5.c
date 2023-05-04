@@ -1,4 +1,4 @@
-// PS - write a program which accepts number from user and display its table in reverse order
+// PS - write a program which accepts number from user and display first 5 multiples of 5
 
 #include<stdio.h>
 
@@ -6,7 +6,7 @@ void DisplayTable(int iNo) {
     int iCnt = 0;
     int Table = 1;
 
-    for(iCnt = 10; iCnt >= 1; iCnt--){
+    for(iCnt = 1; iCnt <= 5; iCnt++){
         Table = iNo * iCnt;
         printf("%d \t", Table);
     }
