@@ -3,9 +3,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int CheckNum(int Arr[], int iLength) {
+int MaximumNum(int Arr[], int iLength) {
     int iCnt = 0;
-    int iMax = 0;
+    int iMax = Arr[0];
 
     for(iCnt = 0; iCnt < iLength; iCnt++){
         if(Arr[iCnt] > iMax) {
@@ -31,7 +31,7 @@ int main() {
         scanf("%d", &ptr[iCnt]);
     }
 
-    iRet = CheckNum(ptr, iSize);
+    iRet = MaximumNum(ptr, iSize);
 
     printf("Largest number is %d", iRet);
 

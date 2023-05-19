@@ -3,19 +3,19 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int CheckNum(int Arr[], int iLength) {
+int CheckMinimum(int Arr[], int iLength) {
     int iCnt = 0;
-    int iTemp = 0;
+    int iMin = 0;
 
-    iTemp = Arr[0];
+    iMin = Arr[0];
 
     for(iCnt = 0; iCnt < iLength; iCnt++){
-        if(iTemp > Arr[iCnt]) {
-            iTemp = Arr[iCnt];
+        if(iMin > Arr[iCnt]) {
+            iMin = Arr[iCnt];
         }
     }
 
-    return iTemp;
+    return iMin;
 }
 
 int main() {
@@ -33,7 +33,7 @@ int main() {
         scanf("%d", &ptr[iCnt]);
     }
 
-    iRet = CheckNum(ptr, iSize);
+    iRet = CheckMinimum(ptr, iSize);
 
     printf("Smallest number is %d", iRet);
 

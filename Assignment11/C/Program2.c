@@ -9,12 +9,15 @@ int CheckNum(int Arr[], int iLength, int No) {
 
     for(iCnt = 0; iCnt < iLength; iCnt++){
         if(Arr[iCnt] == No) {
-            index = iCnt;
             break;
         }
     }
 
-    return index;
+    if(iCnt == iLength) {
+        return -1;
+    } else {
+        return iCnt;
+    }
 }
 
 int main() {
@@ -37,7 +40,11 @@ int main() {
 
     iRet = CheckNum(ptr, iSize, iValue);
 
-    printf("1st occurance of %d is %d", iValue, iRet);
+    if(iRet == -1){
+        printf("There is no such element \n");
+    } else {
+        printf("1st occurance of %d is %d", iValue, iRet);
+    }
 
     free(ptr);
 
