@@ -1,35 +1,43 @@
-// PS - write java program which accepts number of rows and number of columns from user and display below pattern
-// * 	# 	* 	# 	
-// * 	# 	* 	# 	
-// * 	# 	* 	# 	
-// * 	# 	* 	# 
+// PS - write java program which accepts string from user and display below pattern
+// H	e	l	l	o	
+// H	e	l	l	
+// H	e	l	
+// H	e	
+// H	
+// H	
+// H	e	
+// H	e	l	
+// H	e	l	l	
+// H	e	l	l	o
 
 import java.util.*;
 
-class Pattern
+class StrPattern
 {
-    public int Arr[][];
-
-    public Pattern(int i, int j)
+    public void CharPattern(String str)
     {
-        Arr = new int[i][j];
-    }
+        char Arr[] = str.toCharArray();
 
-    public void DigitPattern()
-    {
-        for(int i = 0; i < Arr.length; i++)
+        int len = Arr.length;
+
+        for(int iCnt = 0; iCnt < Arr.length; iCnt++)
         {
-            for(int j = 0; j < Arr[i].length; j++)
+            for(int i = 0; i < len; i++)
             {
-                if((j % 2) == 0)
-                {
-                    System.out.print("* \t");
-                }
-                else
-                {
-                    System.out.print("# \t");
-                }
+                System.out.print(Arr[i]+ "\t");
             }
+            len--;
+            System.out.println();
+        }
+
+        len = 0;
+        for(int iCnt = 0; iCnt < Arr.length; iCnt++)
+        {
+            for(int i = 0; i <= len; i++)
+            {
+                System.out.print(Arr[i]+ "\t");
+            }
+            len++;
             System.out.println();
         }
     }
@@ -41,14 +49,11 @@ class Program4
     {
         Scanner sobj = new Scanner(System.in);
 
-        System.out.println("Enter number of rows");
-        int iRows = sobj.nextInt();
+        System.out.println("Enter String");
+        String str = sobj.nextLine();
 
-        System.out.println("Enter number of columns");
-        int iCols = sobj.nextInt();
+        StrPattern pobj = new StrPattern();
 
-        Pattern pobj = new Pattern(iRows, iCols);
-
-        pobj.DigitPattern();
+        pobj.CharPattern(str);
     }
 }

@@ -1,32 +1,46 @@
-// PS - write java program which accepts number of rows and number of columns from user and display below pattern
-// 1	1	1	1	
-// 2	2	2	2	
-// 3	3	3	3	
-// 4	4	4	4
+// PS - write java program which accepts string from user and display below pattern
+// H	
+// H	e	
+// H	e	l	
+// H	e	l	l	
+// H	e	l	l	o	
+// H	e	l	l	o	
+// H	e	l	l	
+// H	e	l	
+// H	e	
+// H
 
 import java.util.*;
 
-class Pattern
+class StrPattern
 {
-    public int Arr[][];
-
-    public Pattern(int i, int j)
+    public void CharPattern(String str)
     {
-        Arr = new int[i][j];
-    }
+        char Arr[] = str.toCharArray();
 
-    public void DigitPattern()
-    {
-        int digit = 1;
-        for(int i = 0; i < Arr.length; i++)
+        int len = 0;
+
+        for(int iCnt = 0; iCnt < Arr.length; iCnt++)
         {
-            for(int j = 0; j < Arr[i].length; j++)
+            for(int i = 0; i <= len; i++)
             {
-                System.out.print(digit+"\t");
+                System.out.print(Arr[i]+ "\t");
             }
-            digit++;
+            len++;
             System.out.println();
         }
+
+        len = Arr.length;
+        for(int iCnt = 0; iCnt < Arr.length; iCnt++)
+        {
+            for(int i = 0; i < len; i++)
+            {
+                System.out.print(Arr[i]+ "\t");
+            }
+            len--;
+            System.out.println();
+        }
+
     }
 }
 
@@ -36,14 +50,11 @@ class Program5
     {
         Scanner sobj = new Scanner(System.in);
 
-        System.out.println("Enter number of rows");
-        int iRows = sobj.nextInt();
+        System.out.println("Enter String");
+        String str = sobj.nextLine();
 
-        System.out.println("Enter number of columns");
-        int iCols = sobj.nextInt();
+        StrPattern pobj = new StrPattern();
 
-        Pattern pobj = new Pattern(iRows, iCols);
-
-        pobj.DigitPattern();
+        pobj.CharPattern(str);
     }
 }

@@ -15,10 +15,14 @@ class StrPattern
 
         for(int iCnt = 0; iCnt < Arr.length; iCnt++)
         {
-            for(char ch : Arr)
+            for(int i = 0; i < Arr.length; i++)
             {
-                System.out.print(ch + "\t");
+                System.out.print(Arr[i]+ "\t");
             }
+            // for(char ch : Arr)
+            // {
+            //     System.out.print(ch + "\t");
+            // }
             System.out.println();
         }
     }
